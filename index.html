@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dipraise.eth</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text">
+      <span>d</span>
+      <span>i</span>
+      <span>p</span>
+      <span>r</span>
+      <span>a</span>
+      <span>i</span>
+      <span>s</span>
+      <span>e</span>
+      <span>.</span>
+      <span>e</span>
+      <span>t</span>
+      <span>h</span>
+    </h1>
+  </div>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text {
+  font-size: 64px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  cursor: pointer;
+}
+
+.text span {
+  display: inline-block;
+  animation: animateText 2s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+.text span:nth-child(1) {
+  --i: 1;
+}
+
+.text span:nth-child(2) {
+  --i: 2;
+}
+
+.text span:nth-child(3) {
+  --i: 3;
+}
+
+.text span:nth-child(4) {
+  --i: 4;
+}
+
+.text span:nth-child(5) {
+  --i: 5;
+}
+
+.text span:nth-child(6) {
+  --i: 6;
+}
+
+.text span:nth-child(7) {
+  --i: 7;
+}
+
+.text span:nth-child(8) {
+  --i: 8;
+}
+
+.text span:nth-child(9) {
+  --i: 9;
+}
+
+.text span:nth-child(10) {
+  --i: 10;
+}
+
+.text span:nth-child(11) {
+  --i: 11;
+}
+
+.text span:nth-child(12) {
+  --i: 12;
+}
+
+@keyframes animateText {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+  </style>
+  <script>
+    // Create a canvas element
+const canvas = document.createElement('canvas');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+document.body.appendChild(canvas);
+
+// Get the canvas context
+const ctx = canvas.getContext('2d');
+
+// Define the animation function
+function animate() {
+  // Clear the canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Draw the background
+  ctx.fillStyle = 'rgba(255, 105, 180, 0.5)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Draw the text
+  ctx.font = '64px Montserrat';
+  ctx.fillStyle = '#fff';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('dipraise.eth', canvas.width / 2, canvas.height / 2);
+
+  // Add some noise to the text
+  for (let i = 0; i < 100; i++) {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+    ctx.fillRect(x, y, 2, 2);
+  }
+
+  // Request the next frame
+  requestAnimationFrame(animate);
+}
+
+// Start the animation
+animate();
+  </script>
+</body>
+</html>
